@@ -1,0 +1,26 @@
+name: Simple CI
+
+#name the action that we want to start the workflow
+on: 
+push:
+branches: 
+-main
+
+#initiate a job and what step it should follow like build, test, run. like stages in jenkins
+
+jobs:
+build:
+#for an app to run we need to specify the githubaction that on which platform you want to run
+runs-on: ubuntu-latest 
+
+#steps inside the job build.
+steps:
+-name: Checkout code
+uses: actions/Checkout@v2
+
+-name: setup python app
+uses: actions/setup-Python@v4
+ python-version: '3.10'
+
+ -name: run the hello world app
+ uses: | python app.py
