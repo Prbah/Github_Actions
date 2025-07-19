@@ -1,7 +1,8 @@
+#summa
 name: Simple CI
 
 on:
-  push:
+  push: 
     branches:
       - main
 
